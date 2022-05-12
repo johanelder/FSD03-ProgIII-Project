@@ -23,9 +23,14 @@ May 12, 2022 Johan
 
 May 12, 2022 Mobin
 
-1.
-2.
-3.
+1. Done
+- Create Mockup for the website
+2. To do until next scrum
+-help set up trello
+-start up java file for script
+check into API for flights
+3.Need assistance - figure out
+-look into how to set up search engine to pull info from flight API
 
 
 May 12, 2022 Bogdan
