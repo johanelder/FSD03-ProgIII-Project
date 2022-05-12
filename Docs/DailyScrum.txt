@@ -1,0 +1,39 @@
+Daily Scrum ==Every Day at 9am, once on the weekend==
+
+
+Johan
+Mobin
+Bogdan
+
+
+May 12, 2022 Johan
+
+1. Done
+- setup project structure folders/classes
+- setup up Google Doc to track collaboration
+- finish and submit proposal doc
+
+2. To do until next scrum
+- setup Trello Board
+- create stories
+
+3. Need assistance - figure out
+- Look into AWS or other Cloud services (Azure?) for DB and domain stuff.
+
+
+May 12, 2022 Mobin
+
+1.
+2.
+3.
+
+
+May 12, 2022 Bogdan
+
+1.
+2.
+3.
+
+
+
+
