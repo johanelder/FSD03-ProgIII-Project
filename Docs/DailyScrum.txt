@@ -35,9 +35,14 @@ check into API for flights
 
 May 12, 2022 Bogdan
 
-1.
-2.
-3.
+1 Done
+ - Proposal. 
+ - ERD for JMBtravel project.
+2 In progress 
+ - Updating ERD for proposal. 
+ - Starting to work on user registration.  
+3 Difficulties 
+ - No difficulties so far.
 
 
 
