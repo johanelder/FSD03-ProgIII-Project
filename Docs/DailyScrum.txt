@@ -45,5 +45,40 @@ May 12, 2022 Bogdan
  - No difficulties so far.
 
 
+May 13, 2022 Johan
+
+1. Done
+- Trello and stories + todos
+
+2. To do until next scrum
+- cars page 
+- basic styling
+
+3. Need assistance - figure out
+- GitHub stuff.. ignore and push auth
+
+
+May 13, 2022 Mobin
+
+1. Done
+- helped set up trello(stories and checklist)
+-started Java file for script
+-had to wait on token approval before i can start test and fine-tuning the SPI
+2. To do until next scrum
+-finish script by sunday and ideally have all the kinks worked out
+check into API for flights
+3.Need assistance - figure out
+-need to decide if i want the customer to be able to search all flights or just specific predetermined ones
+
+
+May 13, 2022 Bogdan
+1. Done
+- User registration. Without roles so far
+- Security
+2. To do until next scrum
+- Working on roles and security
+3.Need assistance - figure out
+- No difficulties so far
+
 
 
