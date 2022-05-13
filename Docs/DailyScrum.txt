@@ -55,7 +55,8 @@ May 13, 2022 Johan
 - basic styling
 
 3. Need assistance - figure out
-- GitHub stuff.. ignore and push auth
+- GitHub stuff.. ignore .. auth for commits?
+- image file upload for SpringBoot.(Car and hotels require thumbnails)
 
 
 May 13, 2022 Mobin
