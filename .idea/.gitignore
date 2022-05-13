@@ -1,4 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-SpringProject/src/main/resources/application.properties
+#ignore all .properties files
+*.properties
