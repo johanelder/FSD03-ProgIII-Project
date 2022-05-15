@@ -20,7 +20,7 @@ public class CarController {
     @Autowired
     private CarRepository eRepo;
 
-    @GetMapping({"/admin/cars"})
+    @GetMapping({"/cars"})
     public ModelAndView getAllCars() {
         ModelAndView mav = new ModelAndView("list-cars");
         mav.addObject("cars", eRepo.findAll());
