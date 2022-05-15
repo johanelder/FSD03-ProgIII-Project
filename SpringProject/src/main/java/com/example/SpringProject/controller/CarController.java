@@ -2,6 +2,7 @@ package com.example.SpringProject.controller;
 
 
 import com.example.SpringProject.entity.Cars;
+import com.example.SpringProject.entity.User;
 import com.example.SpringProject.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class CarController {
@@ -28,11 +30,17 @@ public class CarController {
     }
 
     @GetMapping({"/admin/cars"})
-    public ModelAndView getAllCarsAdmin() {
+    public String listCars(Model model) {
+        List<Cars> listCars = eRepo.findAll();
+        model.addAttribute("listCars", listCars);
+
+        return "admin/list-cars";
+    }
+   /* public ModelAndView getAllCarsAdmin() {
         ModelAndView mav = new ModelAndView("list-cars");
         mav.addObject("cars", eRepo.findAll());
         return mav;
-    }
+    }*/
 
     @GetMapping("/admin/addCarForm")
     public ModelAndView addCarForm() {
