@@ -36,12 +36,13 @@ public class CarController {
 
         return "admin/list-cars";
     }
+    // Johans code
    /* public ModelAndView getAllCarsAdmin() {
         ModelAndView mav = new ModelAndView("list-cars");
         mav.addObject("cars", eRepo.findAll());
         return mav;
     }*/
-
+ // Wroking code
     @GetMapping("/admin/addCarForm")
     public ModelAndView addCarForm() {
         ModelAndView mav = new ModelAndView("car-form");
