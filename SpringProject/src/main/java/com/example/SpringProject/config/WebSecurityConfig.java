@@ -50,7 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/admin/users").authenticated()
-                .antMatchers("/admin/list-cars").authenticated()
+                .antMatchers("/admin/list-cars", "/admin/cars", "/admin/car-form").authenticated()
+                .antMatchers("/admin/addCarForm", "/admin/saveCars", "/admin/showUpdateForm", "/admin/deleteCars").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
