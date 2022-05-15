@@ -91,3 +91,16 @@ May 15, 2022 Johan
 - The admin pages won't load ... Auth ??
 - Image display using Thymeleaf templating
 - GitHub GitIgnore ... still not ignoring the .properties file....   Maybe just setup an AWS DB?
+
+May 15, 2022 Bogdan
+1. Done
+- Working on roles and security
+- Security of admin pages
+2. To do until next scrum
+- Working on CRUD for admin/users
+- Admin control panel 
+- Working on roles and security
+3.Need assistance - figure out
+- How CRUD will be implemented 
+   1) same page as User use with cars/hotels/deals but if logged as Admin have access to (Add/del/Update)buttons 
+   2) different pages with only access of Admin 
