@@ -22,6 +22,13 @@ public class CarController {
 
     @GetMapping({"/cars"})
     public ModelAndView getAllCars() {
+        ModelAndView mav = new ModelAndView("cars");
+        mav.addObject("cars", eRepo.findAll());
+        return mav;
+    }
+
+    @GetMapping({"/admin/cars"})
+    public ModelAndView getAllCarsAdmin() {
         ModelAndView mav = new ModelAndView("list-cars");
         mav.addObject("cars", eRepo.findAll());
         return mav;
