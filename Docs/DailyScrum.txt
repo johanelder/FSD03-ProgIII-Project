@@ -82,4 +82,12 @@ May 13, 2022 Bogdan
 - No difficulties so far
 
 
-
+May 15, 2022 Johan
+1. Done
+- added the base for Cars list page, and Admin cars list + add Car.
+2. Todo until next Scrum
+- basic styling
+3. Need assistance - figure out
+- The admin pages won't load ... Auth ??
+- Image display using Thymeleaf templating
+- GitHub GitIgnore ... still not ignoring the .properties file....   Maybe just setup an AWS DB?
