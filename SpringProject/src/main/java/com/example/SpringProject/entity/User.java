@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
+
 @Entity
 @Table(name = "users")
 @Data
@@ -44,4 +45,13 @@ public class User {
     @Transient
     @NotEmpty(message = "retypePassword can not be empty!!")
     private String retypePassword;
+
+    public enum Role {
+        USER,
+        ADMIN
+    }
+    @Enumerated(EnumType.STRING)
+    private Role role = Role.USER;
+
+
 }
