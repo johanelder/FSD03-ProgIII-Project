@@ -11,7 +11,7 @@
     <hr/>
     <form th:action="@{/admin/saveCars}" th:object="${cars}" method="POST">
         <input type="text" th:field="*{category}" placeholder="Enter the Category of Car" class="form-control col-4 mb-2 mt-2"/>
-        <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{category}"></div>
+        <div class="text-danger" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
         <input type="text" th:field="*{make}" placeholder="Enter the make" class="form-control col-4 mb-2 mt-2"/>
         <div class="text-danger" th:if="${#fields.hasErrors('make')}" th:errors="*{make}"></div>
         <input type="text" th:field="*{model}" placeholder="Enter the Model" class="form-control col-4 mb-2 mt-2"/>
