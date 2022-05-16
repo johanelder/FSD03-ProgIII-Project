@@ -2,7 +2,6 @@ package com.example.SpringProject.controller;
 
 
 import com.example.SpringProject.entity.Cars;
-import com.example.SpringProject.entity.User;
 import com.example.SpringProject.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,18 +36,18 @@ public class CarController {
         return "admin/list-cars";
     }
 
-    @GetMapping("/admin/addCarForm")
+    @GetMapping(value = "/admin/car-form")
     public ModelAndView addCarForm() {
-        ModelAndView mav = new ModelAndView("car-form");
-        Cars newCars = new Cars();
-        mav.addObject("cars", newCars);
+        ModelAndView mav = new ModelAndView("admin/car-form");
+        Cars cars = new Cars();
+        mav.addObject("cars", cars);
         return mav;
     }
 
     @PostMapping("/admin/saveCars")
     public String saveCars(Cars cars, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "car-form";
+            return "admin/car-form";
         }
         eRepo.save(cars);
         return "redirect:/admin/cars";

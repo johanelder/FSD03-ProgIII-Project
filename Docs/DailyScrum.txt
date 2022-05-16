@@ -104,3 +104,23 @@ May 15, 2022 Bogdan
 - How CRUD will be implemented 
    1) same page as User use with cars/hotels/deals but if logged as Admin have access to (Add/del/Update)buttons 
    2) different pages with only access of Admin 
+
+May 15, 2022 Mobin
+1. Done
+-
+2. To do until next scrum
+-
+3. Need assistance - figure out
+-
+
+
+May 16, 2022 Johan
+1. Done
+-
+2. Todo until next scrum
+- Fix error in admin add car/update car/ delete car
+- use the correct car code to build the hotel pages
+3. Need assistance - figure out
+- Whitelabel error in CarForm. Thymeleaf in html file likely cause. Bogdan has page rendered with form commented out .. I am not able to replicate this.
+
+

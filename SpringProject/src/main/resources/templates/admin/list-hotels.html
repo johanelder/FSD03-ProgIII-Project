@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Hotels</title>
+    <title>List Hotels</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -10,7 +10,8 @@
 <div class="container">
     <h3>List of Hotel Rooms</h3>
     <hr/>
-    <table class="table table-bordered table-striped" id="hotelsTable">
+    <a th:href="@{/admin/hotel-form}" class="btn btn-primary mb-2">Add Room</a>
+    <table class="table table-bordered table-striped" id="carsTable">
         <thead>
         <tr>
             <th>Hotel</th>
@@ -18,15 +19,20 @@
             <th>Beds</th>
             <th>Price</th>
             <th>Image</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="hotels: ${hotels}">
+        <tr th:each="hotels: ${listHotels}">
             <td th:text="${hotels.hotel}"/>
             <td th:text="${hotels.type}"/>
             <td th:text="${hotels.beds}"/>
             <td th:text="${hotels.price}"/>
             <td th:text="${hotels.image}"/>
+            <td>
+                <a th:href="@{/admin/showUpdateForm(hotelsId=${hotels.id})}" class="btn btn-info">Update</a>
+                <a th:href="@{/admin/deleteHotels(hotelsId=${hotels.id})}" class="btn btn-danger ml-2">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>
