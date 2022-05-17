@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1449d368-7539-492b-b1ba-fd0890b0ce68" name="Changes" comment="Daily Scrum update 16.05.2022">
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/hotel-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/hotel-form.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="294McPO3FOeXb9PEkcSHArgkHnL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../simpleForm/simpleForm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bogda\Desktop\John Abbott\Programming_3\FSD03-ProgIII-Project\SpringProject\src\main\resources\templates" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.SpringProject.config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.SpringProject.service" />
+      <recent name="com.example.SpringProject.security" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.SpringProject.SpringProjectApplication" />
+      <module name="SpringProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.SpringProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SpringProjectApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1449d368-7539-492b-b1ba-fd0890b0ce68" name="Changes" comment="" />
+      <created>1652368041204</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652368041204</updated>
+    </task>
+    <task id="LOCAL-00001" summary="1)Added User registration 2) On main(index) page added temporary navbar 3) List of user page &gt;&gt; Will be modified to have access only by a user with admin role">
+      <created>1652412691949</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652412691949</updated>
+    </task>
+    <task id="LOCAL-00002" summary="CarController">
+      <created>1652628697979</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652628697979</updated>
+    </task>
+    <task id="LOCAL-00003" summary="CarController">
+      <created>1652629285444</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652629285444</updated>
+    </task>
+    <task id="LOCAL-00004" summary="CarController">
+      <created>1652630522210</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652630522210</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Scrum Bogdan 15.05.2020 update">
+      <created>1652631334995</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652631334995</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1)Roles and Security &#10;2) Index.html modified navbar">
+      <created>1652740749572</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652740749572</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Daily Scrum update 16.05.2022">
+      <created>1652740835015</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652740835016</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1)Added User registration 2) On main(index) page added temporary navbar 3) List of user page &gt;&gt; Will be modified to have access only by a user with admin role" />
+    <MESSAGE value="CarController" />
+    <MESSAGE value="Scrum Bogdan 15.05.2020 update" />
+    <MESSAGE value="1)Roles and Security &#10;2) Index.html modified navbar" />
+    <MESSAGE value="Daily Scrum update 16.05.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Daily Scrum update 16.05.2022" />
+  </component>
+</project>
