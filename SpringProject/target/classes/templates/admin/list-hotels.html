@@ -11,7 +11,7 @@
     <h3>List of Hotel Rooms</h3>
     <hr/>
     <a th:href="@{/admin/hotel-form}" class="btn btn-primary mb-2">Add Room</a>
-    <table class="table table-bordered table-striped" id="carsTable">
+    <table class="table table-bordered table-striped" id="hotelsTable">
         <thead>
         <tr>
             <th>Hotel</th>
@@ -41,7 +41,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("#employeeTable").DataTable({
+        $("#hotelsTable").DataTable({
             'aoColumnDefs': [{
                 'bSortable': false,
                 'aTargets': [-1]
