@@ -10,12 +10,12 @@
     <h2>Add a Room to Inventory</h2>
     <hr/>
     <form th:action="@{/admin/saveHotels}" th:object="${hotels}" method="POST">
-        <!--<input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
+        <input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
         <div class="text-danger" th:if="${#fields.hasErrors('hotel')}" th:errors="*{hotel}"></div>
         <input type="text" th:field="*{type}" placeholder="Enter the category of room" class="form-control col-4 mb-2 mt-2"/>
         <div class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
         <input type="text" th:field="*{beds}" placeholder="Enter type of bed(s)" class="form-control col-4 mb-2 mt-2"/>
-        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>-->
+        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>
         <input type="text" th:field="*{price}" placeholder="Enter the Price per day" class="form-control col-4 mb-2 mt-2"/>
         <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
         <div>

@@ -92,6 +92,14 @@ May 15, 2022 Johan
 - Image display using Thymeleaf templating
 - GitHub GitIgnore ... still not ignoring the .properties file....   Maybe just setup an AWS DB?
 
+May 15, 2022 Mobin
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
+
 May 15, 2022 Bogdan
 1. Done
 - Working on roles and security
@@ -105,6 +113,25 @@ May 15, 2022 Bogdan
    1) same page as User use with cars/hotels/deals but if logged as Admin have access to (Add/del/Update)buttons 
    2) different pages with only access of Admin 
 
+May 16, 2022 Johan
+1. Done
+- fixed error on Add Car form
+- added hotels list and form
+2. Todo until next Scrum
+- fix error in Car update
+- fix error in hotel update
+3. Need assistance - figure out
+- Image display using Thymeleaf templating (Blob in MySQL and use field ing in Thymeleaf?)
+- GitHub GitIgnore ... still not ignoring the .properties file....   Maybe just setup an AWS DB? ***
+
+May 15, 2022 Mobin
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
+
 May 16, 2022 Bogdan
 1. Done
 - Roles and security finished (Two roles (USER, ADMIN)
@@ -114,3 +141,29 @@ May 16, 2022 Bogdan
 - Admin control panel 
 3.Need assistance - figure out
 - No difficulties so far
+
+May 17, 2022 Johan
+1. Done
+- fixed hotel form error
+2. Todo
+- add image functionality to DB and then to code
+- fix update error in car and hotel form
+3. Need assistance
+- Image ?
+- GitIgnore. In order to have a live DB, we will go to cloud, but don't want to transmit DB credentials into public Git Repo
+
+May 17, 2022 Mobin
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
+
+May 17, 2022 Bogdan
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
