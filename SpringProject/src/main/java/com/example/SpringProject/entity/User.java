@@ -28,7 +28,6 @@ public class User {
     @NotEmpty(message = "Name can not be empty!!")
     private String password;
 
-
     @Column(name = "firstName", nullable = false, length = 20)
     @NotEmpty(message = "First name can not be empty!!")
     @Size(min = 2, max = 20, message = "First name must be between 2 and 20 characters long!")
