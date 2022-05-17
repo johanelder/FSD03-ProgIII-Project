@@ -63,7 +63,7 @@ public class HotelController {
     @GetMapping("/admin/deleteHotels")
     public String deleteHotels(@RequestParam Long hotelsId) {
         eRepo.deleteById(hotelsId);
-        return "redirect:/admin/hotels";
+        return "redirect:/admin/list-hotels";
     }
 
 }
