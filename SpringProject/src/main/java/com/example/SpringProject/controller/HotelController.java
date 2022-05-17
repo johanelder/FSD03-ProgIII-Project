@@ -26,7 +26,7 @@ public class HotelController {
         mav.addObject("hotels", eRepo.findAll());
         return mav;
     }
-
+// look at our URL structure in the cotnrollers, for cars and hotels and between user and Admin. Different html file/URL?
     @GetMapping({"/admin/list-hotels"})
     public String listHotels(Model model) {
         List<Hotels> listHotels = eRepo.findAll();
