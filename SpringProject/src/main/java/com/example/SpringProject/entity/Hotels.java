@@ -22,15 +22,15 @@ public class Hotels {
 
     @Column(name = "hotel", nullable = false, length = 20)
     @NotBlank(message = "Hotel is mandatory")
-    private String category;
+    private String hotel;
 
     @Column(name = "type", nullable = false, length = 20)
     @NotBlank(message = "Type is mandatory")
-    private String make;
+    private String type;
 
     @Column(name = "beds", nullable = false, length = 20)
     @NotBlank(message = "Beds is mandatory")
-    private String model;
+    private String beds;
 
     @Column(name = "price", nullable = false, length = 5)
     @NotNull(message = "Price is necessary")

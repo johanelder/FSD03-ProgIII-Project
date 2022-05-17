@@ -27,7 +27,7 @@ public class HotelController {
         return mav;
     }
 
-    @GetMapping({"/admin/hotels"})
+    @GetMapping({"/admin/list-hotels"})
     public String listHotels(Model model) {
         List<Hotels> listHotels = eRepo.findAll();
         model.addAttribute("listHotels", listHotels);
