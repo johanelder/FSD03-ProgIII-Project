@@ -1,0 +1,25 @@
+Index: target/classes/templates/admin/hotel-form.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\" xmlns:th=\"http://www.thymeleaf.org\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Add Room</title>\r\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n    <h2>Add a Room to Inventory</h2>\r\n    <hr/>\r\n    <form th:action=\"@{/admin/saveHotels}\" th:object=\"${hotels}\" method=\"POST\">\r\n        <!--<input type=\"text\" th:field=\"*{hotel}\" placeholder=\"Enter the Hotel Name\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('hotel')}\" th:errors=\"*{hotel}\"></div>\r\n        <input type=\"text\" th:field=\"*{type}\" placeholder=\"Enter the category of room\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('type')}\" th:errors=\"*{type}\"></div>\r\n        <input type=\"text\" th:field=\"*{beds}\" placeholder=\"Enter type of bed(s)\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('beds')}\" th:errors=\"*{beds}\"></div>-->\r\n        <input type=\"text\" th:field=\"*{price}\" placeholder=\"Enter the Price per day\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('price')}\" th:errors=\"*{price}\"></div>\r\n        <div>\r\n            <label>Photos: </label>\r\n            <input type=\"file\" name=\"image\" accept=\"image/png, image/jpeg\" />\r\n        </div>\r\n        <button class=\"btn btn-primary\" type=\"submit\">Save</button>\r\n        <input type=\"hidden\" th:field=\"*{id}\" />\r\n    </form>\r\n    <hr/>\r\n    <a th:href=\"@{/admin/hotels}\">Back to List of Hotels</a>\r\n</div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/templates/admin/hotel-form.html b/target/classes/templates/admin/hotel-form.html
+--- a/target/classes/templates/admin/hotel-form.html	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/target/classes/templates/admin/hotel-form.html	(date 1652793558475)
+@@ -10,12 +10,12 @@
+     <h2>Add a Room to Inventory</h2>
+     <hr/>
+     <form th:action="@{/admin/saveHotels}" th:object="${hotels}" method="POST">
+-        <!--<input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
++        <input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
+         <div class="text-danger" th:if="${#fields.hasErrors('hotel')}" th:errors="*{hotel}"></div>
+         <input type="text" th:field="*{type}" placeholder="Enter the category of room" class="form-control col-4 mb-2 mt-2"/>
+         <div class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
+         <input type="text" th:field="*{beds}" placeholder="Enter type of bed(s)" class="form-control col-4 mb-2 mt-2"/>
+-        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>-->
++        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>
+         <input type="text" th:field="*{price}" placeholder="Enter the Price per day" class="form-control col-4 mb-2 mt-2"/>
+         <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+         <div>

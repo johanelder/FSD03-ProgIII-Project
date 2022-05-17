@@ -1,0 +1,40 @@
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel\r\nspring.datasource.username=JMBAdmin\r\nspring.datasource.password=admin\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision 2aae5a2648b7df9c3df5b0d560447d5694596db5)
++++ b/src/main/resources/application.properties	(date 1652631693119)
+@@ -1,6 +1,6 @@
+-spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel
+-spring.datasource.username=JMBAdmin
+-spring.datasource.password=admin
++spring.datasource.url=jdbc:mysql://localhost:3306/jmb
++spring.datasource.username=root
++spring.datasource.password=root
+ 
+ spring.jpa.hibernate.ddl-auto=update
+ 
+Index: target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel\r\nspring.datasource.username=JMBAdmin\r\nspring.datasource.password=admin\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+--- a/target/classes/application.properties	(revision 2aae5a2648b7df9c3df5b0d560447d5694596db5)
++++ b/target/classes/application.properties	(date 1652667680731)
+@@ -1,6 +1,6 @@
+-spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel
+-spring.datasource.username=JMBAdmin
+-spring.datasource.password=admin
++spring.datasource.url=jdbc:mysql://localhost:3306/jmb
++spring.datasource.username=root
++spring.datasource.password=root
+ 
+ spring.jpa.hibernate.ddl-auto=update
+ 

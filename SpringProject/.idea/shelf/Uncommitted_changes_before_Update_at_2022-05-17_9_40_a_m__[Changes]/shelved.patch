@@ -1,0 +1,481 @@
+Index: src/main/java/com/example/SpringProject/entity/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.SpringProject.entity;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\nimport javax.persistence.*;\r\nimport javax.validation.constraints.NotEmpty;\r\nimport javax.validation.constraints.Email;\r\nimport javax.validation.constraints.Size;\r\n\r\n\r\n@Entity\r\n@Table(name = \"users\")\r\n@Data\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\npublic class User {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long id;\r\n\r\n    @Column(nullable = false, unique = true, length = 45)\r\n    @Email(message = \"{validation.email.Type}\")\r\n    private String email;\r\n\r\n    @Column(nullable = false, length = 64)\r\n    @NotEmpty(message = \"Name can not be empty!!\")\r\n    private String password;\r\n\r\n\r\n    @Column(name = \"firstName\", nullable = false, length = 20)\r\n    @NotEmpty(message = \"First name can not be empty!!\")\r\n    @Size(min = 2, max = 20, message = \"First name must be between 2 and 20 characters long!\")\r\n    private String firstName;\r\n\r\n    @Column(name = \"lastName\", nullable = false, length = 20)\r\n    @NotEmpty(message = \"Last name can not be empty!!\")\r\n    @Size(min = 2, max = 20, message = \"Last name must be between 2 and 20 characters long!\")\r\n    private String lastName;\r\n\r\n    @Column(name = \"enabled\", nullable = false)\r\n    private boolean enabled = true;\r\n\r\n    @Transient\r\n    @NotEmpty(message = \"retypePassword can not be empty!!\")\r\n    private String retypePassword;\r\n\r\n    public enum Role {\r\n        USER,\r\n        ADMIN\r\n    }\r\n    @Enumerated(EnumType.STRING)\r\n    private Role role = Role.USER;\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/SpringProject/entity/User.java b/src/main/java/com/example/SpringProject/entity/User.java
+--- a/src/main/java/com/example/SpringProject/entity/User.java	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/java/com/example/SpringProject/entity/User.java	(date 1652758102968)
+@@ -28,7 +28,6 @@
+     @NotEmpty(message = "Name can not be empty!!")
+     private String password;
+ 
+-
+     @Column(name = "firstName", nullable = false, length = 20)
+     @NotEmpty(message = "First name can not be empty!!")
+     @Size(min = 2, max = 20, message = "First name must be between 2 and 20 characters long!")
+Index: src/main/java/com/example/SpringProject/controller/HotelController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.SpringProject.controller;\r\n\r\nimport com.example.SpringProject.entity.Hotels;\r\nimport com.example.SpringProject.repository.HotelRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.validation.BindingResult;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestParam;\r\nimport org.springframework.web.servlet.ModelAndView;\r\n\r\nimport javax.validation.Valid;\r\nimport java.util.List;\r\n\r\n@Controller\r\npublic class HotelController {\r\n\r\n    @Autowired\r\n    private HotelRepository eRepo;\r\n\r\n    @GetMapping({\"/hotels\"})\r\n    public ModelAndView getAllHotels() {\r\n        ModelAndView mav = new ModelAndView(\"hotels\");\r\n        mav.addObject(\"hotels\", eRepo.findAll());\r\n        return mav;\r\n    }\r\n\r\n    @GetMapping({\"/admin/hotels\"})\r\n    public String listHotels(Model model) {\r\n        List<Hotels> listHotels = eRepo.findAll();\r\n        model.addAttribute(\"listHotels\", listHotels);\r\n\r\n        return \"admin/list-hotels\";\r\n    }\r\n\r\n    @GetMapping(value = \"/admin/hotel-form\")\r\n    public ModelAndView addHotelForm() {\r\n        ModelAndView mav = new ModelAndView(\"admin/hotel-form\");\r\n        Hotels hotels = new Hotels();\r\n        mav.addObject(\"hotels\", hotels);\r\n        return mav;\r\n    }\r\n\r\n    @PostMapping(\"/admin/saveHotels\")\r\n    public String saveHotels(Hotels hotels, BindingResult result, Model model) {\r\n        if (result.hasErrors()) {\r\n            return \"admin/hotel-form\";\r\n        }\r\n        eRepo.save(hotels);\r\n        return \"redirect:/admin/list-hotels\";\r\n    }\r\n\r\n    @GetMapping(\"/admin/roomUpdateForm\")\r\n    public ModelAndView roomUpdateForm(@RequestParam Long hotelsId) {\r\n        ModelAndView mav = new ModelAndView(\"hotel-form\");\r\n        Hotels hotels = eRepo.findById(hotelsId).get();\r\n        mav.addObject(\"hotels\", hotels);\r\n        return mav;\r\n    }\r\n\r\n    @GetMapping(\"/admin/deleteHotels\")\r\n    public String deleteHotels(@RequestParam Long hotelsId) {\r\n        eRepo.deleteById(hotelsId);\r\n        return \"redirect:/admin/hotels\";\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/SpringProject/controller/HotelController.java b/src/main/java/com/example/SpringProject/controller/HotelController.java
+--- a/src/main/java/com/example/SpringProject/controller/HotelController.java	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/java/com/example/SpringProject/controller/HotelController.java	(date 1652794734478)
+@@ -46,10 +46,10 @@
+     @PostMapping("/admin/saveHotels")
+     public String saveHotels(Hotels hotels, BindingResult result, Model model) {
+         if (result.hasErrors()) {
+-            return "admin/hotel-form";
++            return "admin/list-hotels";
+         }
+         eRepo.save(hotels);
+-        return "redirect:/admin/list-hotels";
++        return "redirect:/admin/hotels";
+     }
+ 
+     @GetMapping("/admin/roomUpdateForm")
+Index: src/main/resources/templates/admin/hotel-form.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\" xmlns:th=\"http://www.thymeleaf.org\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Add Room</title>\r\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n    <h2>Add a Room to Inventory</h2>\r\n    <hr/>\r\n    <form th:action=\"@{/admin/saveHotels}\" th:object=\"${hotels}\" method=\"POST\">\r\n        <!--<input type=\"text\" th:field=\"*{hotel}\" placeholder=\"Enter the Hotel Name\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('hotel')}\" th:errors=\"*{hotel}\"></div>\r\n        <input type=\"text\" th:field=\"*{type}\" placeholder=\"Enter the category of room\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('type')}\" th:errors=\"*{type}\"></div>\r\n        <input type=\"text\" th:field=\"*{beds}\" placeholder=\"Enter type of bed(s)\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('beds')}\" th:errors=\"*{beds}\"></div>-->\r\n        <input type=\"text\" th:field=\"*{price}\" placeholder=\"Enter the Price per day\" class=\"form-control col-4 mb-2 mt-2\"/>\r\n        <div class=\"text-danger\" th:if=\"${#fields.hasErrors('price')}\" th:errors=\"*{price}\"></div>\r\n        <div>\r\n            <label>Photos: </label>\r\n            <input type=\"file\" name=\"image\" accept=\"image/png, image/jpeg\" />\r\n        </div>\r\n        <button class=\"btn btn-primary\" type=\"submit\">Save</button>\r\n        <input type=\"hidden\" th:field=\"*{id}\" />\r\n    </form>\r\n    <hr/>\r\n    <a th:href=\"@{/admin/hotels}\">Back to List of Hotels</a>\r\n</div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/admin/hotel-form.html b/src/main/resources/templates/admin/hotel-form.html
+--- a/src/main/resources/templates/admin/hotel-form.html	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/resources/templates/admin/hotel-form.html	(date 1652793558475)
+@@ -10,12 +10,12 @@
+     <h2>Add a Room to Inventory</h2>
+     <hr/>
+     <form th:action="@{/admin/saveHotels}" th:object="${hotels}" method="POST">
+-        <!--<input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
++        <input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
+         <div class="text-danger" th:if="${#fields.hasErrors('hotel')}" th:errors="*{hotel}"></div>
+         <input type="text" th:field="*{type}" placeholder="Enter the category of room" class="form-control col-4 mb-2 mt-2"/>
+         <div class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
+         <input type="text" th:field="*{beds}" placeholder="Enter type of bed(s)" class="form-control col-4 mb-2 mt-2"/>
+-        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>-->
++        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>
+         <input type="text" th:field="*{price}" placeholder="Enter the Price per day" class="form-control col-4 mb-2 mt-2"/>
+         <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+         <div>
+Index: src/main/java/com/example/SpringProject/entity/Hotels.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.SpringProject.entity;\r\n\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\nimport javax.persistence.*;\r\nimport javax.validation.constraints.NotBlank;\r\nimport javax.validation.constraints.NotNull;\r\n\r\n@Entity\r\n@Table(name = \"hotels\")\r\n@Data\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n\r\npublic class Hotels {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long id;\r\n\r\n    @Column(name = \"hotel\", nullable = false, length = 20)\r\n    @NotBlank(message = \"Hotel is mandatory\")\r\n    private String category;\r\n\r\n    @Column(name = \"type\", nullable = false, length = 20)\r\n    @NotBlank(message = \"Type is mandatory\")\r\n    private String make;\r\n\r\n    @Column(name = \"beds\", nullable = false, length = 20)\r\n    @NotBlank(message = \"Beds is mandatory\")\r\n    private String model;\r\n\r\n    @Column(name = \"price\", nullable = false, length = 5)\r\n    @NotNull(message = \"Price is necessary\")\r\n    private double price;\r\n\r\n    @Column(nullable = true, length = 64)\r\n    private String image;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/SpringProject/entity/Hotels.java b/src/main/java/com/example/SpringProject/entity/Hotels.java
+--- a/src/main/java/com/example/SpringProject/entity/Hotels.java	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/java/com/example/SpringProject/entity/Hotels.java	(date 1652794103432)
+@@ -22,15 +22,15 @@
+ 
+     @Column(name = "hotel", nullable = false, length = 20)
+     @NotBlank(message = "Hotel is mandatory")
+-    private String category;
++    private String hotel;
+ 
+     @Column(name = "type", nullable = false, length = 20)
+     @NotBlank(message = "Type is mandatory")
+-    private String make;
++    private String type;
+ 
+     @Column(name = "beds", nullable = false, length = 20)
+     @NotBlank(message = "Beds is mandatory")
+-    private String model;
++    private String beds;
+ 
+     @Column(name = "price", nullable = false, length = 5)
+     @NotNull(message = "Price is necessary")
+Index: src/main/java/com/example/SpringProject/controller/UserController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.SpringProject.controller;\r\n\r\nimport com.example.SpringProject.entity.User;\r\nimport com.example.SpringProject.repository.UserRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.validation.Errors;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\n\r\nimport javax.validation.Valid;\r\nimport java.util.List;\r\n\r\n@Controller\r\npublic class UserController {\r\n    @Autowired\r\n    private UserRepository userRepo;\r\n\r\n    @GetMapping(\"\")\r\n    public String homePage() {\r\n\r\n        return \"index\";\r\n    }\r\n    @GetMapping(\"/register\")\r\n    public String showRegistrationForm(Model model) {\r\n        model.addAttribute(\"user\", new User());\r\n\r\n        return \"signupForm\";\r\n    }\r\n\r\n    @PostMapping(\"/processRegister\")\r\n    public String processRegister(@Valid User user, Errors errors) {\r\n        // validation\r\n        if (null != errors && errors.getErrorCount() > 0 ) {\r\n            return \"signupForm\";\r\n        } else if(!user.getRetypePassword().equals(user.getPassword())) {\r\n\r\n            errors.rejectValue(\"retypePassword\", \"Password and Confirm not the same\", null, \"Password and Confirm not the same!\");\r\n            return \"signupForm\";\r\n        } else{\r\n            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();\r\n            String encodedPassword = passwordEncoder.encode(user.getPassword());\r\n            user.setPassword(encodedPassword);\r\n            userRepo.save(user);\r\n\r\n            return \"registerSuccess\";\r\n        }\r\n    }\r\n\r\n\r\n\r\n    @GetMapping(\"admin/users\")\r\n    public String listUsers(Model model) {\r\n        List<User> listUsers = userRepo.findAll();\r\n        model.addAttribute(\"listUsers\", listUsers);\r\n\r\n        return \"admin/users\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/SpringProject/controller/UserController.java b/src/main/java/com/example/SpringProject/controller/UserController.java
+--- a/src/main/java/com/example/SpringProject/controller/UserController.java	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/java/com/example/SpringProject/controller/UserController.java	(date 1652757538020)
+@@ -1,5 +1,4 @@
+ package com.example.SpringProject.controller;
+-
+ import com.example.SpringProject.entity.User;
+ import com.example.SpringProject.repository.UserRepository;
+ import org.springframework.beans.factory.annotation.Autowired;
+@@ -9,6 +8,8 @@
+ import org.springframework.validation.Errors;
+ import org.springframework.web.bind.annotation.GetMapping;
+ import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
+ 
+ import javax.validation.Valid;
+ import java.util.List;
+@@ -36,7 +37,6 @@
+         if (null != errors && errors.getErrorCount() > 0 ) {
+             return "signupForm";
+         } else if(!user.getRetypePassword().equals(user.getPassword())) {
+-
+             errors.rejectValue("retypePassword", "Password and Confirm not the same", null, "Password and Confirm not the same!");
+             return "signupForm";
+         } else{
+@@ -51,6 +51,7 @@
+ 
+ 
+ 
++
+     @GetMapping("admin/users")
+     public String listUsers(Model model) {
+         List<User> listUsers = userRepo.findAll();
+@@ -58,4 +59,33 @@
+ 
+         return "admin/users";
+     }
++
++    // Update form
++    @GetMapping("/admin/showUserUpdateForm")
++    public ModelAndView showUpdateForm(@RequestParam Long userId) {
++        ModelAndView mav = new ModelAndView("/admin/userUpdateForm");
++        User user = userRepo.findById(userId).get();
++        mav.addObject("user", user);
++        return mav;
++    }
++    // Save User
++    @PostMapping("/admin/saveUser")
++    public String saveUser(@Valid User user, Errors errors) {
++        // validation
++        if (null != errors && errors.getErrorCount() > 0) {
++             //System.out.println("Errors:" + errors.getAllErrors());
++            return "/admin/userUpdateForm";
++        } else {
++            userRepo.save(user);
++            return "redirect:/admin/users";
++        }
++    }
++
++    // Delete User
++    @GetMapping("admin/deleteUser")
++    public String deletePerson(@RequestParam Long userId){
++        userRepo.deleteById(userId);
++        return "redirect:/admin/users";
++    }
++
+ }
+Index: src/main/java/com/example/SpringProject/security/CustomUserDetails.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+> package com.example.SpringProject.security;\r\n\r\n\r\nimport com.example.SpringProject.entity.User;\r\nimport org.springframework.security.core.GrantedAuthority;\r\nimport org.springframework.security.core.authority.SimpleGrantedAuthority;\r\nimport org.springframework.security.core.userdetails.UserDetails;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collection;\r\nimport java.util.List;\r\n\r\npublic class CustomUserDetails implements UserDetails {\r\n    private User user;\r\n\r\n    public CustomUserDetails(User user) {\r\n        this.user = user;\r\n    }\r\n\r\n\r\n\r\n    @Override\r\n    public Collection<? extends GrantedAuthority> getAuthorities() {\r\n        List<GrantedAuthority> list = new ArrayList<>();\r\n        list.add(new SimpleGrantedAuthority(\"ROLE_\" + user.getRole().name()));\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public String getPassword() { return user.getPassword(); }\r\n\r\n    @Override\r\n    public String getUsername() {\r\n        return user.getEmail();\r\n    }\r\n\r\n    @Override\r\n    public boolean isAccountNonExpired() {\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public boolean isAccountNonLocked() {\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public boolean isCredentialsNonExpired() {\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public boolean isEnabled() {\r\n        return true;\r\n    }\r\n\r\n    public String getName() {\r\n        return user.getFirstName() + \" \" + user.getLastName();\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/SpringProject/security/CustomUserDetails.java b/src/main/java/com/example/SpringProject/security/CustomUserDetails.java
+--- a/src/main/java/com/example/SpringProject/security/CustomUserDetails.java	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/java/com/example/SpringProject/security/CustomUserDetails.java	(date 1652758315290)
+@@ -27,8 +27,9 @@
+     }
+ 
+     @Override
+-    public String getPassword() { return user.getPassword(); }
++    public String getPassword() { return user.getPassword();}
+ 
++
+     @Override
+     public String getUsername() {
+         return user.getEmail();
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel\r\nspring.datasource.username=JMBAdmin\r\nspring.datasource.password=admin\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/resources/application.properties	(date 1652746400943)
+@@ -1,6 +1,6 @@
+-spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel
+-spring.datasource.username=JMBAdmin
+-spring.datasource.password=admin
++spring.datasource.url=jdbc:mysql://localhost:3306/jmb
++spring.datasource.username=root
++spring.datasource.password=root
+ 
+ spring.jpa.hibernate.ddl-auto=update
+ 
+Index: target/classes/templates/admin/users.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html xmlns:th=\"http://www.thymeleaf.org\">\r\n<head>\r\n    <meta charset=\"ISO-8859-1\">\r\n    <title>List of Users</title>\r\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\r\n          integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div class=\"container text-center\">\r\n    <div>\r\n        <form th:action=\"@{/logout}\" method=\"post\">\r\n            <p>\r\n                Welcome <b>[[${#request.userPrincipal.principal.name}]]</b>\r\n            </p>\r\n            <input type=\"submit\" value=\"Sign Out\" />\r\n        </form>\r\n    </div>\r\n    <div>\r\n        <h1>List of Users</h1>\r\n    </div>\r\n\r\n    <div>\r\n        <table class=\"table table-striped table-bordered\">\r\n            <thead class=\"thead-dark\">\r\n            <tr>\r\n                <th>User ID</th>\r\n                <th>E-mail</th>\r\n                <th>Username</th>\r\n\r\n            </tr>\r\n            </thead>\r\n            <tbody>\r\n            <tr th:each=\"user: ${listUsers}\">\r\n                <td th:text=\"${user.id}\">User ID</td>\r\n                <td th:text=\"${user.email}\">E-mail</td>\r\n                <td th:text=\"${user.firstName + ' ' + user.lastName}\">Username</td>\r\n\r\n            </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n</div>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/templates/admin/users.html b/target/classes/templates/admin/users.html
+--- a/target/classes/templates/admin/users.html	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/target/classes/templates/admin/users.html	(date 1652753537580)
+@@ -1,33 +1,41 @@
+ <!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org">
++<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+ <head>
+     <meta charset="ISO-8859-1">
+     <title>List of Users</title>
++    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ </head>
+ <body>
+-<div class="container text-center">
+-    <div>
+-        <form th:action="@{/logout}" method="post">
+-            <p>
+-                Welcome <b>[[${#request.userPrincipal.principal.name}]]</b>
+-            </p>
+-            <input type="submit" value="Sign Out" />
+-        </form>
+-    </div>
+-    <div>
+-        <h1>List of Users</h1>
+-    </div>
++
++
++    <nav class="navbar navbar-expand-sm bg-light">
++            <ul class="navbar-nav">
++
++                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
++                    <a th:href="@{/admin/users}"  class="nav-link">Admin Panel</a>
++                </li>
++
++                <form th:action="@{/logout}" method="post"  class="form-inline">
++                    <span class="navbar-text mr-5">  Welcome <b>[[${#request.userPrincipal.principal.name}]]</b> </span>
++                    <button class="btn my-2 my-sm-0" type="submit">Logout</button>
++                </form>
++            </ul>
+ 
+-    <div>
+-        <table class="table table-striped table-bordered">
+-            <thead class="thead-dark">
++    </nav>
++    <div class="container">
++
++        <h2>List of Users</h2>
++        <hr/>
++        <a th:href="@{/}" class="btn btn-primary mb-2">Add User</a>
++        <table class="table table-bordered table-striped" id="users-table" >
++            <thead class="thead-light">
+             <tr>
+                 <th>User ID</th>
+                 <th>E-mail</th>
+                 <th>Username</th>
+-
++                <th>Actions</th>
+             </tr>
+             </thead>
+             <tbody>
+@@ -35,11 +43,26 @@
+                 <td th:text="${user.id}">User ID</td>
+                 <td th:text="${user.email}">E-mail</td>
+                 <td th:text="${user.firstName + ' ' + user.lastName}">Username</td>
++                <td>
++                    <a th:href="@{/admin/showUserUpdateForm(userId=${user.id})}" class="btn btn-info">Update</a>
++                    <a th:href="@{/admin/deleteUser(userId=${user.id})}" class="btn btn-danger ml-2">Delete</a>
++                </td>
+ 
+             </tr>
+             </tbody>
+         </table>
+     </div>
+-</div>
++    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
++    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
++    <script>
++    $(document).ready(function(){
++    $("#users-table").DataTable({
++    'aoColumnDefs' : [{
++    'bSortable' : false,
++    'aTargets' : [-1]
++    }]
++    });
++    })
++</script>
+ </body>
+ </html>
+\ No newline at end of file
+Index: target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel\r\nspring.datasource.username=JMBAdmin\r\nspring.datasource.password=admin\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+--- a/target/classes/application.properties	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/target/classes/application.properties	(date 1652753535235)
+@@ -1,6 +1,6 @@
+-spring.datasource.url=jdbc:mysql://localhost:3306/JMBtravel
+-spring.datasource.username=JMBAdmin
+-spring.datasource.password=admin
++spring.datasource.url=jdbc:mysql://localhost:3306/jmb
++spring.datasource.username=root
++spring.datasource.password=root
+ 
+ spring.jpa.hibernate.ddl-auto=update
+ 
+Index: src/main/resources/templates/admin/userUpdateForm.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/templates/admin/userUpdateForm.html b/src/main/resources/templates/admin/userUpdateForm.html
+new file mode 100644
+--- /dev/null	(date 1652751661349)
++++ b/src/main/resources/templates/admin/userUpdateForm.html	(date 1652751661349)
+@@ -0,0 +1,43 @@
++<!DOCTYPE html>
++<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
++<head>
++    <meta charset="ISO-8859-1">
++    <title>Users update</title>
++    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
++          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
++</head>
++<body>
++<div class="container">
++<h2>Update a User</h2>
++<hr/>
++<form th:action="@{/admin/saveUser}" th:object="${user}" method="POST">
++
++    <div class="form-group">
++        <input type="text" th:field="*{email}"  class="form-control col-4 mb-4" />
++        <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
++    </div>
++
++    <div class="form-group">
++        <input type="text" th:field="*{firstName}"  class="form-control col-4 mb-4"/>
++        <p class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">
++    </div>
++
++    <div class="form-group">
++        <input type="text" th:field="*{lastName}"  class="form-control col-4 mb-4"/>
++        <p class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">
++    </div>
++
++    <div class="form-group">
++        <input type="text" th:field="*{role}"  class="form-control col-4 mb-4"/>
++        <p class="alert alert-danger" th:if="${#fields.hasErrors('role')}" th:errors="*{role}">
++        <p class="alert alert-danger" th:if="${#fields.hasErrors('retypePassword')}" th:errors="*{retypePassword}">
++    </div>
++
++    <button class="btn btn-primary" type="submit">Save</button>
++    <input type="hidden" th:field="*{id}" />
++</form>
++<hr/>
++<a th:href="@{/admin/users}">To the List of Users</a>
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: src/main/resources/templates/admin/users.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html xmlns:th=\"http://www.thymeleaf.org\">\r\n<head>\r\n    <meta charset=\"ISO-8859-1\">\r\n    <title>List of Users</title>\r\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\r\n          integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div class=\"container text-center\">\r\n    <div>\r\n        <form th:action=\"@{/logout}\" method=\"post\">\r\n            <p>\r\n                Welcome <b>[[${#request.userPrincipal.principal.name}]]</b>\r\n            </p>\r\n            <input type=\"submit\" value=\"Sign Out\" />\r\n        </form>\r\n    </div>\r\n    <div>\r\n        <h1>List of Users</h1>\r\n    </div>\r\n\r\n    <div>\r\n        <table class=\"table table-striped table-bordered\">\r\n            <thead class=\"thead-dark\">\r\n            <tr>\r\n                <th>User ID</th>\r\n                <th>E-mail</th>\r\n                <th>Username</th>\r\n\r\n            </tr>\r\n            </thead>\r\n            <tbody>\r\n            <tr th:each=\"user: ${listUsers}\">\r\n                <td th:text=\"${user.id}\">User ID</td>\r\n                <td th:text=\"${user.email}\">E-mail</td>\r\n                <td th:text=\"${user.firstName + ' ' + user.lastName}\">Username</td>\r\n\r\n            </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n</div>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/templates/admin/users.html b/src/main/resources/templates/admin/users.html
+--- a/src/main/resources/templates/admin/users.html	(revision d24d796e5096d67410b255d2057ffab9c0ca4afc)
++++ b/src/main/resources/templates/admin/users.html	(date 1652751148625)
+@@ -1,33 +1,41 @@
+ <!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org">
++<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+ <head>
+     <meta charset="ISO-8859-1">
+     <title>List of Users</title>
++    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ </head>
+ <body>
+-<div class="container text-center">
+-    <div>
+-        <form th:action="@{/logout}" method="post">
+-            <p>
+-                Welcome <b>[[${#request.userPrincipal.principal.name}]]</b>
+-            </p>
+-            <input type="submit" value="Sign Out" />
+-        </form>
+-    </div>
+-    <div>
+-        <h1>List of Users</h1>
+-    </div>
++
++
++    <nav class="navbar navbar-expand-sm bg-light">
++            <ul class="navbar-nav">
++
++                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
++                    <a th:href="@{/admin/users}"  class="nav-link">Admin Panel</a>
++                </li>
++
++                <form th:action="@{/logout}" method="post"  class="form-inline">
++                    <span class="navbar-text mr-5">  Welcome <b>[[${#request.userPrincipal.principal.name}]]</b> </span>
++                    <button class="btn my-2 my-sm-0" type="submit">Logout</button>
++                </form>
++            </ul>
+ 
+-    <div>
+-        <table class="table table-striped table-bordered">
+-            <thead class="thead-dark">
++    </nav>
++    <div class="container">
++
++        <h2>List of Users</h2>
++        <hr/>
++        <a th:href="@{/}" class="btn btn-primary mb-2">Add User</a>
++        <table class="table table-bordered table-striped" id="users-table" >
++            <thead class="thead-light">
+             <tr>
+                 <th>User ID</th>
+                 <th>E-mail</th>
+                 <th>Username</th>
+-
++                <th>Actions</th>
+             </tr>
+             </thead>
+             <tbody>
+@@ -35,11 +43,26 @@
+                 <td th:text="${user.id}">User ID</td>
+                 <td th:text="${user.email}">E-mail</td>
+                 <td th:text="${user.firstName + ' ' + user.lastName}">Username</td>
++                <td>
++                    <a th:href="@{/admin/showUserUpdateForm(userId=${user.id})}" class="btn btn-info">Update</a>
++                    <a th:href="@{/admin/deleteUser(userId=${user.id})}" class="btn btn-danger ml-2">Delete</a>
++                </td>
+ 
+             </tr>
+             </tbody>
+         </table>
+     </div>
+-</div>
++    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
++    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
++    <script>
++    $(document).ready(function(){
++    $("#users-table").DataTable({
++    'aoColumnDefs' : [{
++    'bSortable' : false,
++    'aTargets' : [-1]
++    }]
++    });
++    })
++</script>
+ </body>
+ </html>
+\ No newline at end of file
