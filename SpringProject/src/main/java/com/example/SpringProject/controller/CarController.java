@@ -55,7 +55,7 @@ public class CarController {
 
     @GetMapping("/admin/showUpdateForm")
     public ModelAndView showUpdateForm(@RequestParam Long carsId) {
-        ModelAndView mav = new ModelAndView("car-form");
+        ModelAndView mav = new ModelAndView("admin/car-form");
         Cars cars = eRepo.findById(carsId).get();
         mav.addObject("cars", cars);
         return mav;

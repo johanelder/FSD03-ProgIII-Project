@@ -54,7 +54,7 @@ public class HotelController {
 
     @GetMapping("/admin/roomUpdateForm")
     public ModelAndView roomUpdateForm(@RequestParam Long hotelsId) {
-        ModelAndView mav = new ModelAndView("hotel-form");
+        ModelAndView mav = new ModelAndView("admin/hotel-form");
         Hotels hotels = eRepo.findById(hotelsId).get();
         mav.addObject("hotels", hotels);
         return mav;
