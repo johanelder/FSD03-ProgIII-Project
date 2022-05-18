@@ -26,7 +26,7 @@
             <td th:text="${hotels.type}"/>
             <td th:text="${hotels.beds}"/>
             <td th:text="${hotels.price}"/>
-            <td th:text="${hotels.image}"/>
+            <td><img th:src="'/resources/images/' + ${hotels.image}"></td>
         </tr>
         </tbody>
     </table>
