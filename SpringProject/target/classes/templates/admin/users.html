@@ -9,21 +9,7 @@
 </head>
 <body>
 
-
-    <nav class="navbar navbar-expand-sm bg-light">
-            <ul class="navbar-nav">
-
-                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                    <a th:href="@{/admin/users}"  class="nav-link">Admin Panel</a>
-                </li>
-
-                <form th:action="@{/logout}" method="post"  class="form-inline">
-                    <span class="navbar-text mr-5">  Welcome <b>[[${#request.userPrincipal.principal.name}]]</b> </span>
-                    <button class="btn my-2 my-sm-0" type="submit">Logout</button>
-                </form>
-            </ul>
-
-    </nav>
+<div th:replace="fragments/topnav :: navbar"></div>
     <div class="container">
 
         <h2>List of Users</h2>
@@ -35,6 +21,7 @@
                 <th>User ID</th>
                 <th>E-mail</th>
                 <th>Username</th>
+                <th>Role</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -43,6 +30,7 @@
                 <td th:text="${user.id}">User ID</td>
                 <td th:text="${user.email}">E-mail</td>
                 <td th:text="${user.firstName + ' ' + user.lastName}">Username</td>
+                <td th:text="${user.role}">Role</td>
                 <td>
                     <a th:href="@{/admin/showUserUpdateForm(userId=${user.id})}" class="btn btn-info">Update</a>
                     <a th:href="@{/admin/deleteUser(userId=${user.id})}" class="btn btn-danger ml-2">Delete</a>
@@ -52,6 +40,7 @@
             </tbody>
         </table>
     </div>
+<div th:replace="fragments/footer :: footer"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
     <script>

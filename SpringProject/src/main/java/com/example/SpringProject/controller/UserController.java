@@ -70,7 +70,7 @@ public class UserController {
     }
     // Save User
     @PostMapping("/admin/saveUser")
-    public String saveUser(@Valid User user, Errors errors) {
+    public String saveUser( User user, Errors errors) {
         // validation
         if (null != errors && errors.getErrorCount() > 0) {
              //System.out.println("Errors:" + errors.getAllErrors());
