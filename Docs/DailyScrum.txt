@@ -162,11 +162,11 @@ May 17, 2022 Mobin
 
 May 17, 2022 Bogdan
 1. Done
--
+- CRUD for admin/users
 2. Todo
--
+- Admin control panel 
 3. Need assistance
--
+- No difficulties so far
 
 
 May 18, 2022 Johan
@@ -190,8 +190,9 @@ May 18, 2022 Mobin
 
 May 18, 2022 Bogdan
 1. Done
--
+- Admin control panel 
 2. Todo
--
+- Thymeleaf reusable components of web pages(Header/navbar/Footer)
+- Fixing User Update
 3. Need assistance
--
+- No difficulties so far
