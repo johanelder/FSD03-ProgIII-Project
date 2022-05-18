@@ -167,3 +167,31 @@ May 17, 2022 Bogdan
 -
 3. Need assistance
 -
+
+
+May 18, 2022 Johan
+1. Done
+- fixed update error cars and hotels /admin
+- created all the cloud services we will be using. RDS, EC2(Apache Web Server), S3 and DNS
+2. Todo
+- add image functionality to DB and then to code
+- 
+3. Need assistance
+- 
+
+
+May 18, 2022 Mobin
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
+
+May 18, 2022 Bogdan
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
