@@ -29,7 +29,7 @@
             <td th:text="${cars.make}"/>
             <td th:text="${cars.model}"/>
             <td th:text="${cars.price}"/>
-            <td><img th:src="'/resources/images/' + ${cars.image}"></td>
+            <td id="images"><img th:src="${cars.image}" width="300" height="159" style="background-color:#FFFFFF"></td>
             <td>
                 <a th:href="@{/admin/showUpdateForm(carsId=${cars.id})}" class="btn btn-info">Update</a>
                 <a th:href="@{/admin/deleteCars(carsId=${cars.id})}" class="btn btn-danger ml-2">Delete</a>
