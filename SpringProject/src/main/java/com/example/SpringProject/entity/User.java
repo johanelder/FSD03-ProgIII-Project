@@ -25,7 +25,7 @@ public class User {
     private String email;
 
     @Column(nullable = false, length = 64)
-    @NotEmpty(message = "Name can not be empty!!")
+    @NotEmpty(message = "Password can not be empty!!")
     private String password;
 
     @Column(name = "firstName", nullable = false, length = 20)
@@ -42,7 +42,6 @@ public class User {
     private boolean enabled = true;
 
     @Transient
-    @NotEmpty(message = "retypePassword can not be empty!!")
     private String retypePassword;
 
     public enum Role {

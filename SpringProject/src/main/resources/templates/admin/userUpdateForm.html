@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Users update</title>
+    <title>User update</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <div th:replace="fragments/topnav :: navbar"></div>
 <div class="container">
-<h2>Update a User</h2>
+<h2>Update User</h2>
 <hr/>
 <form th:action="@{/admin/saveUser}" th:object="${user}" method="POST">
 
@@ -31,15 +31,19 @@
         <p class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">
     </div>
 
+
     <div class="form-group">
-        <label class="col-4 col-form-label">Role: </label>
-        <input type="text" th:field="*{role}"  class="form-control col-4 mb-4"/>
-        <p class="alert alert-danger" th:if="${#fields.hasErrors('role')}" th:errors="*{role}">
-        <p class="alert alert-danger" th:if="${#fields.hasErrors('retypePassword')}" th:errors="*{retypePassword}">
+        <label>Role: </label>
+    <select th:field="*{role}" >
+        <option value="ADMIN">ADMIN</option>
+        <option value="USER">USER</option>
+
+    </select>
     </div>
 
     <button class="btn btn-primary" type="submit">Save</button>
     <input type="hidden" th:field="*{id}" />
+    <input type="hidden"  th:field="*{password}" />
 </form>
 <hr/>
 <a th:href="@{/admin/users}">To the List of Users</a>
