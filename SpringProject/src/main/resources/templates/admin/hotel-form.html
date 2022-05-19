@@ -10,7 +10,6 @@
 <div class="container">
     <h2>Add a Room to Inventory</h2>
     <hr/>
-    <!-- testing with Bogdan for his Git issue and his problem iwth merge vs update-->
     <form th:action="@{/admin/saveHotels}" th:object="${hotels}" method="POST">
         <input type="text" th:field="*{hotel}" placeholder="Enter the Hotel Name" class="form-control col-4 mb-2 mt-2"/>
         <div class="text-danger" th:if="${#fields.hasErrors('hotel')}" th:errors="*{hotel}"></div>
