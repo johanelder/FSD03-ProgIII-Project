@@ -20,10 +20,8 @@
         <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>
         <input type="text" th:field="*{price}" placeholder="Enter the Price per day" class="form-control col-4 mb-2 mt-2"/>
         <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
-        <div>
-            <label>Photos: </label>
-            <input type="file" name="image" accept="image/png, image/jpeg" />
-        </div>
+        <input type="text" th:field="*{image}" placeholder="Enter the image URL" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></div>
         <button class="btn btn-primary mb-2 mt-2" type="submit">Save</button>
         <input type="hidden" th:field="*{id}" />
     </form>
