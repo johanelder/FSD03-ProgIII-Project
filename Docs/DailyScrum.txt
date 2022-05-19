@@ -217,9 +217,11 @@ May 19, 2022 Mobin
 
 May 19, 2022 Bogdan
 1. Done
-- Admin control panel 
+- Fixed User CRUD
+-Thymeleaf reusable components of web pages(Navbar/Footer)
 2. Todo
 - Thymeleaf reusable components of web pages(Header/navbar/Footer)
-- Fixing User Update
+- Fixing frontend bugs
+- Working on frontend. Adding Jumbotron and some content on the main page 
 3. Need assistance
-- No difficulties so far
+- No difficulties
