@@ -5,6 +5,7 @@
     <title>Cars</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
 </head>
 <body>
 <div th:replace="fragments/topnav :: navbar"></div>
@@ -28,7 +29,7 @@
             <td th:text="${cars.make}"/>
             <td th:text="${cars.model}"/>
             <td th:text="${cars.price}"/>
-            <td><img th:src="'/resources/images/' + ${cars.image}"></td>
+            <td id="images"><img th:src="${cars.image}" width="300" height="159"></td>
         </tr>
         </tbody>
     </table>
@@ -37,7 +38,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("#employeeTable").DataTable({
+        $("#carsTable").DataTable({
             'aoColumnDefs': [{
                 'bSortable': false,
                 'aTargets': [-1, -2]

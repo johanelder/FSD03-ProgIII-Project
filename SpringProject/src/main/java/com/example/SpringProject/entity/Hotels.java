@@ -37,6 +37,6 @@ public class Hotels {
     @NotNull(message = "Price is necessary")
     private double price;
 
-    @Column(nullable = true, length = 64)
+    @Column(nullable = true, length = 200)
     private String image;
 }
