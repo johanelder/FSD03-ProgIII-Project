@@ -174,10 +174,10 @@ May 18, 2022 Johan
 - fixed update error cars and hotels /admin
 - created all the cloud services we will be using. RDS, EC2(Apache Web Server), S3 and DNS
 2. Todo
-- add image functionality to DB and then to code
-- 
+- add image functionality to DB and then to code (Use S3 URLs and thyme leaf to display)
+- Possibly create flight functions for DB and Web App
 3. Need assistance
-- 
+- Bogdan error connecting to AWS DB
 
 
 May 18, 2022 Mobin
@@ -189,6 +189,33 @@ May 18, 2022 Mobin
 -
 
 May 18, 2022 Bogdan
+1. Done
+- Admin control panel 
+2. Todo
+- Thymeleaf reusable components of web pages(Header/navbar/Footer)
+- Fixing User Update
+3. Need assistance
+- No difficulties so far
+
+May 19, 2022 Johan
+1. Done
+- 
+2. Todo
+- add images (Use S3 URLs and thyme leaf to display)
+- Possibly create flight functions for DB and Web App (waiting for Mobin to add frontend to his API)
+3. Need assistance
+- 
+
+
+May 19, 2022 Mobin
+1. Done
+-
+2. Todo
+-
+3. Need assistance
+-
+
+May 19, 2022 Bogdan
 1. Done
 - Admin control panel 
 2. Todo
