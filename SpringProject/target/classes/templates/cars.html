@@ -10,7 +10,7 @@
 <body>
 <div th:replace="fragments/topnav :: navbar"></div>
 <div class="container">
-    <div th:replace="fragments/footer :: footer"></div>
+
     <h3>List of Cars to Rent</h3>
     <hr/>
     <table class="table table-bordered table-striped" id="carsTable">
@@ -34,6 +34,7 @@
         </tbody>
     </table>
 </div>
+<div th:replace="fragments/footer :: footer"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
 <script>
