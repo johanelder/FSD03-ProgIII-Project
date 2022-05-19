@@ -66,14 +66,14 @@ public class UserController {
         ModelAndView mav = new ModelAndView("/admin/userUpdateForm");
         User user = userRepo.findById(userId).get();
         mav.addObject("user", user);
+
         return mav;
     }
     // Save User
     @PostMapping("/admin/saveUser")
-    public String saveUser( User user, Errors errors) {
+    public String saveUser(@Valid User user, Errors errors) {
         // validation
         if (null != errors && errors.getErrorCount() > 0) {
-             //System.out.println("Errors:" + errors.getAllErrors());
             return "/admin/userUpdateForm";
         } else {
             userRepo.save(user);
