@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1449d368-7539-492b-b1ba-fd0890b0ce68" name="Changes" comment="Daily Scrum update 16.05.2022">
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/hotel-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/hotel-form.html" afterDir="false" />
-    </list>
+    <list default="true" id="1449d368-7539-492b-b1ba-fd0890b0ce68" name="Changes" comment="Daily Scrum update 16.05.2022" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
