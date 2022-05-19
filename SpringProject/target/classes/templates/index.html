@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
+    <style >
+        .jumbotron{
+               margin-top: 20px;
+               background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg");
+
+                color: white;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                   }
+    </style>
     <meta charset="ISO-8859-1">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -9,9 +20,21 @@
 <body>
 
 <div th:replace="fragments/topnav :: navbar"></div>
-
 <div class="container">
-    <h2>Home page</h2>
+<div class="jumbotron"  >
+
+    <h1>Travel with JMBtravel</h1>
+    <p>
+        Sign in to access member discounts of 10% or more every day, and collect points for every booking with JMBtravel Rewards.
+        There?s a lot of world out there, and our members see more of it.
+    </p>
+    <p>
+        <a class="btn btn-lg btn-primary" href="#">
+            Get started
+        </a>
+    </p>
+</div>
+
     <hr/>
 
 </div>
