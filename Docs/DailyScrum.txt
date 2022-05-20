@@ -202,7 +202,8 @@ May 19, 2022 Johan
 - 
 2. Todo
 - add images (Use S3 URLs and thyme leaf to display)
-- Possibly create flight functions for DB and Web App (waiting for Mobin to add frontend to his API)
+- Partial creation of Booking form for Cars.
+- Slides document for presentation.
 3. Need assistance
 - 
 
