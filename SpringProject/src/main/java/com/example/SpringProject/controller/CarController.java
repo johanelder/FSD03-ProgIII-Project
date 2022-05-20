@@ -1,6 +1,7 @@
 package com.example.SpringProject.controller;
 
 
+import com.example.SpringProject.entity.BookingCar;
 import com.example.SpringProject.entity.Cars;
 import com.example.SpringProject.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,14 +30,23 @@ public class CarController {
         return mav;
     }
 
-    @GetMapping({"/admin/cars"})
+
+    @RequestMapping({"/admin/cars", "/booking-cars"})
     public String listCars(Model model) {
         List<Cars> listCars = eRepo.findAll();
         model.addAttribute("listCars", listCars);
 
         return "admin/list-cars";
     }
+/*
+    @RequestMapping({"/booking-cars"})
+    public String listBookingCar(Model model) {
+        List<Cars> listBookingCar = eRepo.findAll();
+        model.addAttribute("BookingCars", listBookingCar);
 
+        return "booking-cars";
+    }
+*/
     @GetMapping(value = "/admin/car-form")
     public ModelAndView addCarForm() {
         ModelAndView mav = new ModelAndView("admin/car-form");

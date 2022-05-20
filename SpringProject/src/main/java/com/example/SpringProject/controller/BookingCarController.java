@@ -27,13 +27,6 @@ public class BookingCarController {
         return mav;
     }
 
-   @GetMapping({"/admin/booking-cars"})
-    public String listBookingCar(Model model) {
-        List<BookingCar> listBookingCar = eRepo.findAll();
-        model.addAttribute("BookingCars", listBookingCar);
-
-        return "admin/booking-cars";
-    }
 
     @GetMapping(value = "/booking-cars")
     public ModelAndView addBookingCarForm() {
