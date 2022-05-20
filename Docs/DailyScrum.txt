@@ -202,10 +202,10 @@ May 18, 2022 Bogdan
 
 May 19, 2022 Johan
 1. Done
-- 
-2. Todo
 - add images (Use S3 URLs and thyme leaf to display)
-- Partial creation of Booking form for Cars.
+- creation of Booking form for Cars.
+2. Todo
+- fix errors in booking form
 - Slides document for presentation.
 3. Need assistance
 - 
