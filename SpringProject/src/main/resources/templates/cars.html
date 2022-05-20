@@ -30,16 +30,16 @@
             <td th:text="${cars.model}"/>
             <td th:text="${cars.price}"/>
             <td id="images"><img th:src="${cars.image}" width="300" height="159"></td>
-            <td>
-                <input id="departure" name="date" type="date" /> <!--th:field="*{{bookingcars.departure}}" required="required"-->
+            <!--<td>
+                <input id="departure" name="date" type="date" /> th:field="*{{bookingcars.departure}}" required="required"
             </td>
             <td>
-                <input id="arrival" name="date" type="date" /> <!-- th:field="*{{bookingcars.arrival}}" required="required" -->
+                <input id="arrival" name="date" type="date" /> th:field="*{{bookingcars.arrival}}" required="required"
             </td>
             <td>
                 <a th:href="@{/saveBooking(bookingId=${booking.id})}" class="btn btn-info">Book</a>
 
-            </td>
+            </td> -->
         </tr>
         </tbody>
     </table>
