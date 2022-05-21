@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1449d368-7539-492b-b1ba-fd0890b0ce68" name="Changes" comment="Daily Scrum update 16.05.2022" />
+    <list default="true" id="1449d368-7539-492b-b1ba-fd0890b0ce68" name="Changes" comment="Footer fix in some pages">
+      <change beforePath="$PROJECT_DIR$/../SpringProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-12_10_41_p_m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-12_10_41_p_m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/booking-cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/booking-cars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registerSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registerSuccess.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +59,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bogda\Desktop\John Abbott\Programming_3\FSD03-ProgIII-Project\SpringProject\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bogda\Desktop\John Abbott\Programming_3\FSD03-ProgIII-Project\SpringProject\src\main\resources\templates" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -140,7 +150,42 @@
       <option name="project" value="LOCAL" />
       <updated>1652740835016</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Daily Scrum Bogdan 2022-05-19">
+      <created>1652968767285</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652968767285</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Main page update">
+      <created>1652982424086</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652982424086</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Main page update">
+      <created>1652991381544</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652991381544</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Footer fix">
+      <created>1653000934161</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1653000934161</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Footer fix in some pages">
+      <created>1653012747923</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1653012747923</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +205,10 @@
     <MESSAGE value="Scrum Bogdan 15.05.2020 update" />
     <MESSAGE value="1)Roles and Security &#10;2) Index.html modified navbar" />
     <MESSAGE value="Daily Scrum update 16.05.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Daily Scrum update 16.05.2022" />
+    <MESSAGE value="Daily Scrum Bogdan 2022-05-19" />
+    <MESSAGE value="Main page update" />
+    <MESSAGE value="Footer fix" />
+    <MESSAGE value="Footer fix in some pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Footer fix in some pages" />
   </component>
 </project>
