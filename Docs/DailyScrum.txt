@@ -94,11 +94,12 @@ May 15, 2022 Johan
 
 May 15, 2022 Mobin
 1. Done
--
+- tested the Amadeus API
+- was able to get a simple search form using bootstrap but couldnt get the API to behave
 2. Todo
--
+- Get the GET and POST functions working for the flight search
 3. Need assistance
--
+- why the API Key isnt connecting
 
 May 15, 2022 Bogdan
 1. Done
@@ -126,9 +127,9 @@ May 16, 2022 Johan
 
 May 15, 2022 Mobin
 1. Done
--
+- missed day due to being sick
 2. Todo
--
+-  Get the GET and POST functions working for the flight search
 3. Need assistance
 -
 
@@ -154,11 +155,12 @@ May 17, 2022 Johan
 
 May 17, 2022 Mobin
 1. Done
--
+- scrapped the bootstrap search idea and started trying to
+make a search engine using Java and React using the Amadeus Documentation
 2. Todo
--
+- Complete the flight search engine with React
 3. Need assistance
--
+- .env giving me issues, think IDE is missing a plug in or need to download something
 
 May 17, 2022 Bogdan
 1. Done
@@ -182,9 +184,10 @@ May 18, 2022 Johan
 
 May 18, 2022 Mobin
 1. Done
--
+- completed most of what is needed for the flight search engine
 2. Todo
--
+-search capabilities are good, now need to add a way to make bookings.
+ tho React did throw some errors that need to be address
 3. Need assistance
 -
 
@@ -199,10 +202,10 @@ May 18, 2022 Bogdan
 
 May 19, 2022 Johan
 1. Done
-- 
-2. Todo
 - add images (Use S3 URLs and thyme leaf to display)
-- Partial creation of Booking form for Cars.
+- creation of Booking form for Cars.
+2. Todo
+- fix errors in booking form
 - Slides document for presentation.
 3. Need assistance
 - 
@@ -210,7 +213,7 @@ May 19, 2022 Johan
 
 May 19, 2022 Mobin
 1. Done
--
+- react no longer throwing errors but page comes up blank..
 2. Todo
 -
 3. Need assistance

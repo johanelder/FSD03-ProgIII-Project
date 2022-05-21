@@ -1,14 +1,20 @@
 package com.example.SpringProject.controller;
 
+import com.amadeus.resources.FlightOrder;
 import com.amadeus.exceptions.ResponseException;
-import com.amadeus.resources.*;
 import com.example.SpringProject.Database.DatabaseConnect;
 import com.example.SpringProject.entity.AmadeusConnect;
 import com.google.gson.JsonObject;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.amadeus.resources.Location;
+import com.amadeus.resources.FlightOfferSearch;
+import com.amadeus.resources.FlightPrice;
+import com.amadeus.resources.Traveler;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping(value="/api")
