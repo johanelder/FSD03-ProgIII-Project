@@ -3,18 +3,16 @@ package com.example.SpringProject.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.sql.Blob;
 
 @Entity
-@Table(name = "hotels")
+@Table(name = "rooms")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Hotels {
+public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -43,4 +41,8 @@ public class Hotels {
 
     @Column(nullable = true, length = 200)
     private String city;
+
+    @Column(nullable = false)
+    private boolean isBooked;
+
 }

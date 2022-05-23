@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Cars {
 
     @Id
