@@ -7,8 +7,8 @@ Amadeus amadeus = Amadeus
                 .builder("bmkw87AcZFhuKMR4dGprHP3wGYzBcwAS", "50rGJCcxchHa3SS7")
                 .build();
 const amadeus = new Amadeus({
-  clientId: "bmkw87AcZFhuKMR4dGprHP3wGYzBcwAS",
-  clientSecret: "50rGJCcxchHa3SS7",
+  clientId: API_KEY="bmkw87AcZFhuKMR4dGprHP3wGYzBcwAS",
+    clientSecret: API_SECRET="50rGJCcxchHa3SS7",
 });
 const port = 3000;
 
@@ -47,5 +47,5 @@ app.get("/api/search", async (request, response) => {
   }
 });
 app.listen(port, () => {
-  console.log(`Example app listening at http:localhost:$3000`);
+  console.log(http:localhost:$3000);
 });
