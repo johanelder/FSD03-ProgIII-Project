@@ -1,9 +1,11 @@
 package com.example.SpringProject.controller;
 
+import com.example.SpringProject.entity.Cars;
 import com.example.SpringProject.entity.Room;
 
 import com.example.SpringProject.entity.RoomBooking;
 
+import com.example.SpringProject.entity.User;
 import com.example.SpringProject.repository.RoomBookingRepository;
 import com.example.SpringProject.repository.RoomRepository;
 
@@ -99,6 +101,40 @@ public String deleteBooking(@RequestParam Long bookingId, @RequestParam Long use
     //return "redirect to userRoomBookings with param userId
     return "redirect:/userRoomBookings?userId="+ userId;
 }
+
+    @GetMapping("admin/rooms")
+    public String listRooms(Model model) {
+        List<Room> listRooms = roomRepo.findAll();
+        model.addAttribute("listRooms", listRooms);
+
+        return "admin/rooms";
+    }
+
+    @PostMapping("/admin/saveRoom")
+    public String saveRoom(@Valid Room room, Errors errors) {
+        // validation
+        if (null != errors && errors.getErrorCount() > 0) {
+            return "/admin/roomUpdateForm";
+        } else {
+            roomRepo.save(room);
+            return "redirect:/admin/rooms";
+        }
+    }
+
+    // Delete User
+    @GetMapping("admin/deleteRoom")
+    public String deleteRoom(@RequestParam Long roomId){
+        roomRepo.deleteById(roomId);
+        return "redirect:/admin/rooms";
+    }
+
+    @GetMapping("/admin/addRoom")
+    public ModelAndView addCarForm() {
+        ModelAndView mav = new ModelAndView("admin/addRoom");
+        Room room = new Room();
+        mav.addObject("room", room);
+        return mav;
+    }
 
 }
 
