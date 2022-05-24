@@ -229,3 +229,55 @@ May 19, 2022 Bogdan
 - Working on frontend. Adding Jumbotron and some content on the main page 
 3. Need assistance
 - No difficulties
+
+May 22, 2022 Johan
+1. Done
+- 
+2. Todo
+- deployment
+- 
+3. Need assistance
+- 
+
+
+May 22, 2022 Mobin
+1. Done
+- react no longer throwing errors but page comes up blank..
+2. Todo
+-
+3. Need assistance
+-
+
+May 22, 2022 Bogdan
+1. Done
+- 
+2. Todo
+- room booking
+3. Need assistance
+- No difficulties
+
+May 23, 2022 Johan
+1. Done
+- deployed
+2. Todo
+- fix error in app. (Crashing when running on Heroku)
+- re-create RDS DB .. Amazon lost my DB and my EC2
+3. Need assistance
+- 
+
+
+May 23, 2022 Mobin
+1. Done
+- react no longer throwing errors but page comes up blank..
+2. Todo
+-
+3. Need assistance
+-
+
+May 23, 2022 Bogdan
+1. Done
+- room booking
+2. Todo
+- 
+3. Need assistance
+- No difficulties
