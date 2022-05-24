@@ -43,6 +43,6 @@ public class Room {
     private String city;
 
     @Column(nullable = false)
-    private boolean isBooked;
+    private boolean isBooked = false;
 
 }
