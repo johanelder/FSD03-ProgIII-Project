@@ -1,0 +1,18 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Default ignored files\n/shelf/\n/.idea/workspace.xml\n#ignore all .properties files\n*.properties\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 37e815ab6bb66bd688350ee5a2ba5f9200a42de9)
++++ b/.gitignore	(date 1653357689749)
+@@ -1,5 +1,6 @@
+ # Default ignored files
+ /shelf/
+ /.idea/workspace.xml
+-#ignore all .properties files
++#ignore all .properties files (turned off for deploying)
++
+ *.properties
