@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Room</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div th:replace="fragments/topnav :: navbar"></div>
+<div class="container">
+    <h2>Add a Room</h2>
+    <hr/>
+
+    <form th:action="@{/admin/saveRoom}" th:object="${room}" method="POST">
+
+      <input type="text" th:field="*{hotel}" placeholder="Enter the hotel" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('hotel')}" th:errors="*{hotel}"></div>
+
+        <input type="text" th:field="*{type}" placeholder="Enter the type" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
+
+        <input type="text" th:field="*{beds}" placeholder="Enter the beds" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('beds')}" th:errors="*{beds}"></div>
+
+        <input type="text" th:field="*{price}" placeholder="Enter the price" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+
+        <input type="text" th:field="*{description}" placeholder="Enter the description" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+
+        <input type="text" th:field="*{city}" placeholder="Enter the city" class="form-control col-4 mb-2 mt-2"/>
+        <div class="text-danger" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
+
+        <button class="btn btn-primary" type="submit">Save</button>
+
+    </form>
+    <hr/>
+    <a th:href="@{/admin/rooms}">Back to List of Rooms</a>
+</div>
+
+</body>
+</html>
